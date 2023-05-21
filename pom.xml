@@ -13,14 +13,9 @@
         <maven.compiler.target>11</maven.compiler.target>
         <jackson-dataformat-yaml.version>2.14.2</jackson-dataformat-yaml.version>
         <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
-             
-             
+        <sonar.exclusions>**/*.java</sonar.exclusions>
     </properties>
 
-         <properties>
-    <!-- Other properties -->
-    <sonar.exclusions>**/*.java</sonar.exclusions>
-</properties>
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -35,4 +30,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+         
+    <build>
+        <plugins>
+            <!-- Plugin configurations -->
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
